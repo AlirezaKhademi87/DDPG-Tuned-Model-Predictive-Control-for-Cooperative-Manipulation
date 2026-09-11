@@ -52,19 +52,7 @@ The original integrated simulation was divided into smaller files so that the mo
 
 ## Relation between the simulations and MAT files
 
-The two MAT files are generated from the same simulation framework. The fixed-gain case is run with adaptive tuning disabled, while the adaptive case is run with adaptive tuning enabled. Therefore, the workflow is:
-
-```text
-MATLAB simulation code
-        |
-        +-- Fixed-gain MPC --------> Result_MPC_Fixed_Disturbed.mat
-        |
-        +-- Adaptive-weight MPC ---> Result_DDPG_MPC_Disturbed.mat
-                                      |
-                                      v
-                                Figures 4-9
-```
-
+The two MAT files are generated from the same simulation framework. The fixed-gain case is run with adaptive tuning disabled, while the adaptive case is run with adaptive tuning enabled. 
 The result filename `Result_DDPG_MPC_Disturbed.mat` is retained for compatibility with the manuscript and the original post-processing workflow. In the released reproduction code, the supervisory layer applies state-dependent adaptive MPC-weight tuning during the simulation; online actor-critic training is not performed during reproduction of the reported figures.
 
 ## Figures 12 and 13
